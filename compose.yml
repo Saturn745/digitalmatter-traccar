@@ -1,0 +1,9 @@
+---
+services:
+  digitalmatter-traccar:
+    image: ghcr.io/saturn745/digitalmatter-traccar:latest
+    environment:
+      PORT: 20200 # Port to listen on for digital matter trackers. THIS PORT MUST BE OPENED TO THE PUBLIC AS THIS IS HOW THE TRACKERS COMMUNICATE
+      TRACCAR_URL: http://localhost:5055 # The URL to the Traccar HTTP client API
+      TRACCAR_ENABLED: true # Not sure why you'd want to disable this
+    restart: unless-stopped
